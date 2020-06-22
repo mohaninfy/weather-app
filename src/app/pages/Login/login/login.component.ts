@@ -16,7 +16,8 @@ export class LoginComponent implements OnInit {
   }
   LoginFunc = (e) => {
     // this.props.functionCallFromParent(this.state.showRegister);
-    const url = 'http://voting-assign.herokuapp.com/http://voting-front-end.herokuapp.com/login/';
+    //const url = 'http://voting-assign.herokuapp.com/http://voting-front-end.herokuapp.com/login/';
+    const url = 'http://voting-assign.herokuapp.com/http://voting-front-end.herokuapp.com/api/login/';
     const data = this.loginDetail[0];
     this.dataService.loginUser(url, data).subscribe(res => {
       console.log('Response from server: ' + res);
