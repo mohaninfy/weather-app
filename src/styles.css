@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+/* login */
+/* .voting-login{
+   position: absolute;
+   top: 10%;
+   left:35%;
+} */
+.login{
+    margin: 20% 0 0;
+    border: 1px solid lightslategrey;
+    padding: 20px;
+    border-radius: 5px;
+}
+.text-center {
+text-align: center;
+}
+.text-right{
+    text-align: right;
+}
+.voting-login{
+color: lightslategrey;
+}
+.card{
+    border-radius: 5px;   
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.02);
+    -webkit-box-shadow: 0px 0px 10px 0px rgb(212, 212, 212);
+    -moz-box-shadow: 0px 0px 10px 0px rgb(212, 212, 212);
+    box-shadow: 0px 0px 10px 0px rgb(212, 212, 212);
+}
+/* .card:nth-child(even){
+    background-color: rgb(240, 240, 240);
+}
+.card:nth-child(odd){
+    background-color: #fff;
+} */
