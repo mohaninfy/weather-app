@@ -16,17 +16,6 @@ export class DashboardComponent implements OnInit {
   }
   LoginFunc = (e) => {
     this.router.navigate(['login']);
-    // // const url = "https://sleepy-brook-95490.herokuapp.com/login"
-    // const data = this.loginDetail[0];
-    // this.dataService.loginUser(url, data).subscribe(res => {
-    //   console.log('Response from server: ' + res);
-    //   console.log('Response from server: ' + res);
-    //   if (res) {
-    //     this.dataService.setUserData(res);
-    //     this.router.navigate(['login']);
-    //     // this.props.functionCallFromParent(this.state.showRegister);
-    //   }
-    // });
 }
     //   axios.post(url, data).then(res => {
     //   // this.props.functionCallFromParent(this.state.showRegister);
