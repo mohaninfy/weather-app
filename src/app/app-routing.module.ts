@@ -4,8 +4,8 @@ import { LoginComponent } from './pages/Login/login/login.component';
 import { DashboardComponent } from './pages/Dashboard/dashboard/dashboard.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent }
+  { path: '', component: DashboardComponent },
+  { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({
