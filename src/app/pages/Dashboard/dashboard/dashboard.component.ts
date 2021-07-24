@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataServiceService } from 'src/app/shared/services/data-service.service';
@@ -7,28 +8,29 @@ import { DataServiceService } from 'src/app/shared/services/data-service.service
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor(private dataService: DataServiceService, private router: Router) {
+  mySubscription: any;
+  constructor(private dataService: DataServiceService, private router: Router, private http: HttpClient) {
     this.dataService.getUserData();
-   }
+  }
 
   ngOnInit(): void {
   }
   LoginFunc = (e) => {
     this.router.navigate(['login']);
-}
-    //   axios.post(url, data).then(res => {
-    //   // this.props.functionCallFromParent(this.state.showRegister);
-    //   console.log('Response from server: ' + res);
-    //   console.log('Response from server: ' + res.data.user);
-    //   if (res.data.user) {
-    //     this.router.navigate(['dashboard', {data: res}]);
-    //     // this.props.functionCallFromParent(this.state.showRegister);
-    //   }
-    // }).catch(err => {
-    //   console.log ('Error of post:' + err);
-    //  // this.props.functionCallFromParent(this.state.showRegister);
-
-    // });
-
+  }
+  getForeCastDetails = (e) => {
+    console.log('getforecast', e);
+    let url = 'https://api.openweathermap.org/data/2.5/weather?q=' + 'madurai' + '&appid=b9feb11dd0284ae1a415f94d50777169';
+    this.mySubscription = this.dataService.getForeCast(url).subscribe(data => {
+      console.log('Present weather', data);
+      url = 'http://api.openweathermap.org/data/2.5/forecast?q=' + 'madurai' + '&appid=b9feb11dd0284ae1a415f94d50777169';
+      this.mySubscription = this.dataService.getForeCast(url).subscribe(data2 => {
+        console.log('Full ForeCast weather', data2);
+      });
+    });
+  }
+  // tslint:disable-next-line:use-lifecycle-interface
+  ngOnDestroy() {
+    this.mySubscription.unsubscribe();
+  }
 }

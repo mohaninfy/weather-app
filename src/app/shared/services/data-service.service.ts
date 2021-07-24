@@ -22,4 +22,12 @@ export class DataServiceService {
   getUserData(){
     return this.userData;
   }
+  getForeCast(url): Observable<any>{
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Access-Control-Allow-Origin': '*'
+      })
+    };
+    return this.http.get(url,  httpOptions);
+  }
 }

@@ -3,7 +3,7 @@
         aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#" style="color: #fff;">Dashboard</a>
+    <a class="navbar-brand" href="#" style="color: #fff;">Weather Forecast</a>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="visibility: hidden;">
             <li class="nav-item active">
@@ -17,7 +17,8 @@
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-            <button class="btn btn-outline-light my-2 my-sm-0" type="button">Welcome User</button>
+            <input class="my-2 my-sm-0" type="search" placeholder="Enter city/country/place"/>
+            <button class="btn btn-outline-light my-2 my-sm-0" type="button" (click)="getForeCastDetails($event)">Search</button>
             <!-- <div class="row">
                 <div class="col-12 text-right">
                     <button type="button" class="btn btn-primary text-center" (click)="LoginFunc($event)">Login</button>
