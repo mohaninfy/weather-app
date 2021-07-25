@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-import cors from 'cors';
+const cors = require('cors');
 // const forceSSL = function () {
 //     return function (req, res, next) {
 //         if (req.headers['x-forwarded-proto'] !== 'https') {
