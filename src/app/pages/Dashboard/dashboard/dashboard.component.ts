@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
   getForeCastDetails = (e) => {
     console.log('getforecast', e);
     const url1 = 'https://api.openweathermap.org/data/2.5/weather?q=' + 'Bangalore' + '&appid=b9feb11dd0284ae1a415f94d50777169';
-    const url2 = 'http://api.openweathermap.org/data/2.5/forecast?q=' + 'Bangalore' + '&appid=b9feb11dd0284ae1a415f94d50777169';
+    const url2 = 'https://api.openweathermap.org/data/2.5/forecast?q=' + 'Bangalore' + '&appid=b9feb11dd0284ae1a415f94d50777169';
     this.mySubscription = forkJoin(this.dataService.getForeCast(url1), this.dataService.getForeCast(url2)).subscribe((res) => {
       console.log('Present weather', res[0]);
       console.log('Full ForeCast weather', res[1]);
